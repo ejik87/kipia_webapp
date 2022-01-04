@@ -1,0 +1,22 @@
+{% extends "main/base.html" %}
+{% block title %}{{ block.super }} добавить объект{% endblock %}
+{% block head %}Редактирование "{{ valvenode.title }}" {{ block.super }}{% endblock %}
+{% block content %}
+    <form action="{{ valvenode.get_update_url }}" method="POST">{% csrf_token %}
+        {% for foo in form %}
+        <div class="form-control">
+                {% if foo.errors %}
+                    <div class="ui-icon-alert">
+                    {{ foo.errors }}
+                    </div>
+                {% endif %}
+            {{ foo.label }}
+            {{ foo }}
+        </div>
+        {% endfor %}
+        <button type="submit" class="ui-button-text-icon-primary" name="add_valve">Изменить</button>
+</form>
+<br>
+    <a href="{{ valvenode.get_delete_url }}">Удалить объект</a>
+    <a href="{{ valvenode.get_absolute_url }}">Отмена</a>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "main/base.html" %}
+{% block title %}{{ block.super }} добавить объект{% endblock %}
+{% block head %}Добавить новый объект{% endblock %}
+{% block content %}
+    <form action="{% url 'valve_node_add' %}" method="POST">{% csrf_token %}
+
+        {% for foo in form %}
+        <div class="form-control">
+                {% if foo.errors %}
+                    <div class="ui-icon-alert">
+                    {{ foo.errors }}
+                    </div>
+                {% endif %}
+            {{ foo.label }}
+            {{ foo }}
+        </div>
+        {% endfor %}
+        <button type="submit" class="ui-button-text-icon-primary" name="add_valve">Сохранить</button>
+    </form>
+<br>
+{{ block.super }}
+    <a href="{% url 'valves_node_list' %}">Отмена</a>
+{% endblock %}

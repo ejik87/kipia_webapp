@@ -1,0 +1,8 @@
+<form action="{% url 'news_page' %}" method="GET">{% csrf_token %}
+    <p>Поиск:
+        <label>
+            <input type="search" name="q" autofocus>
+        </label>
+        <button type="submit">найти</button>
+    </p>
+</form>

@@ -1,0 +1,15 @@
+{% extends "main/base.html" %}
+{% block title %}{{ block.super }} {{ valvenode.title|title }}{% endblock %}
+{% block head %}{{ valvenode.title|title }}{% endblock %}
+{% block content %}
+    <p>Местонахождение: {{ valvenode.locate }}</p>
+    <p>Статус: {{ valvenode.node_state }}</p>
+    <p>Теги: {{ valvenode.tags }}</p>
+    <p>Дата последнего посещения: {{ valvenode.visit_date }}</p>
+    <p>Посещал последним: {{ valvenode.visit_master }}</p>
+    <p>Примечание: {{ valvenode.note }}</p>
+{{ block.super }}
+    <a href="{% url 'valves_node_list' %}">Назад к списку</a>
+    <a href="{{ valvenode.get_update_url }}">Редактировать</a>
+    <a href="{{ valvenode.get_delete_url }}">Удалить объект</a>
+{% endblock %}

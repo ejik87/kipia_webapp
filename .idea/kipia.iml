@@ -13,7 +13,13 @@
     </facet>
   </component>
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/kipia" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/main" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/valve_nodes" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea" />
+      <excludePattern pattern="*.sqlite3" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
@@ -22,6 +28,8 @@
     <option name="TEMPLATE_FOLDERS">
       <list>
         <option value="$MODULE_DIR$/templates" />
+        <option value="$MODULE_DIR$/valve_nodes/templates" />
+        <option value="$MODULE_DIR$/main/templates" />
       </list>
     </option>
   </component>

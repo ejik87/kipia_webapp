@@ -1,0 +1,10 @@
+{% extends 'main/base.html' %}
+{% block title %}{{ block.super }} удалить объект{% endblock %}
+{% block head %}Редактирование "{{ valvenode.title }}" {{ block.super }}{% endblock %}
+{% block content %}
+    <form action="{{ valvenode.get_delete_url }}" method="POST">{% csrf_token %}
+        <h3>Вы действительно хотите удалить <b>"{{ valvenode.title|title }}"</b> ?</h3>
+        <a href="{{ valvenode.get_absolute_url }}">Отмена</a>
+        <button type="submit" class="btn btb-danger" name="delete">Удалить</button>
+</form>
+{% endblock %}
